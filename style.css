@@ -1,7 +1,8 @@
 :root {
     --blue: #2794ff;
-    --side-margins: 300px;
-    --contact-info-height: 50px;
+    --green: #2fb510;
+    --side-margins: 10vw;
+    --contact-info-height: 3.2vw;
     --transition: 0.15s;
 }
 html, body {
@@ -11,6 +12,9 @@ html, body {
     padding: 0;
     overflow-x: hidden;
 }
+html {
+    font-size: clamp(12px, 0.8vw, 18px);
+}
 body {
     font-family: "Poppins", sans-serif;
     display: flex;
@@ -18,7 +22,7 @@ body {
 }
 header {
     width: 100%;
-    height: 120px;
+    height: 12vh;
     border-bottom: 3px solid var(--blue);
     display: flex;
     align-items: center;
@@ -34,11 +38,12 @@ a {
 .header-content {
     flex-grow: 1;
     margin: 0 var(--side-margins);
-    /*background-color: black;*/
-    /*height: var(--contact-info-height);*/
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.header-burger {
+    display: none;
 }
 .header-contact-info {
     /*background-color: var(--blue);*/
@@ -46,6 +51,12 @@ a {
 }
 .header-contact-info .contact-info:not(:last-child){
     padding-right: 30px;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 12vh;
 }
 .contact-info {
     display: flex;
@@ -86,7 +97,7 @@ a {
 }
 h2 {
     /*margin-left: 30px;*/
-    font-size: 45px;
+    font-size: 3.5rem;
     letter-spacing: .15rem;
 }
 .main-body {
@@ -100,48 +111,47 @@ h2 {
     background-size: 100% 100%;
 }
 .main-section {
-    width: 700px;
-    height: 400px;
+    width: 35vw;
+    /*height: 400px;*/
     margin-left: var(--side-margins);
     position: relative;
-    margin-top: -100px;
+    margin-top: -200px;
+    /*background-color: red;*/
 }
 .main-title {
-    font-size: 60px;
+    font-size: 4rem;
     font-weight: bold;
     line-height: 80px;
     margin: 20px 0;
     color: white;
 }
 .main-text {
-    font-size: 26px;
-    line-height: 40px;
+    font-size: 1.6rem;
+    line-height: 3rem;
     color: white;
 }
 .main-body-image {
     position: absolute;
     height: 100%;
     clip-path: circle(50% at center);
-    right: 300px;
+    right: 15vw;
     transform: translateX(50%);
 }
 .main-button {
-    /*padding: 30px 40px;*/
     margin-top: 30px;
-    font-size: 35px;
+    font-size: 2.3rem;
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     background-color: var(--blue);
-    border: 3px solid var(--blue);
     outline: 0;
     border-radius: 10px;
     color: white;
-    width: 450px;
-    height: 100px;
+    width: 25vw;
+    height: 10vh;
     cursor: pointer;
     transition: var(--transition);
     position: absolute;
-    bottom: -70px;
+    bottom: calc(-10vh - 3vh);
     transform-origin: center;
     display: flex;
     align-items: center;
@@ -149,9 +159,80 @@ h2 {
 }
 .main-button:hover {
     transform: scale(1.2);
-    color: var(--blue);
-    /*border: 3px solid var(--blue);*/
-    background-color: white;
-    /*width: 500px;*/
-    /*height: 150px;*/
+    color: white;
+    background-color: var(--green);
+}
+@media only screen and (max-width: 768px) {
+
+    .header-burger {
+        display: flex;
+    }
+    .contact-info {
+        display: none;
+        height: 10vh;
+    }
+    .contact-main {
+        height: auto;
+    }
+    .contact-icon {
+        width: 7vh;
+        height: 7vh;
+    }
+    .contact-title, .contact-text {
+        font-size: 1.5rem;
+    }
+    .main-body-image {
+        display: none;
+    }
+    .main-section {
+        width: 90%;
+        margin-left: 5vw;
+    }
+    .main-body {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        background-color: #555353;
+        position: relative;
+        background-image: url("main-background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .main-button {
+        width: 100%;
+    }
+    .header-content {
+        margin: 0 5vw;
+        flex-direction: column;
+        height: 100%;
+    }
+    h2 {
+        font-size: 3rem;
+        letter-spacing: .15rem;
+        margin: 0;
+    }
+    #header.active {
+        height: 100vh;
+        top: 0;
+        position: fixed;
+        right: 0;
+    }
+    .header-contact-info {
+        display: none;
+        flex-direction: column;
+    }
+
+    .header-contact-info.active {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+    }
+    .contact-info.active {
+        display: flex;
+    }
+    .header-left {
+        width: 100%;
+        top: 0;
+    }
+
 }
