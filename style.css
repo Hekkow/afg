@@ -1,5 +1,6 @@
 :root {
     --blue: #2794ff;
+    --light-blue: #25719a;
     --green: #2fb510;
     --side-margins: 8vw;
     --contact-info-height: 3.2vw;
@@ -37,6 +38,9 @@ a {
     text-decoration: none;
     color: inherit;
     user-select: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .header-content {
     flex-grow: 1;
@@ -185,27 +189,39 @@ h2 {
 .navigation {
     height: 6vh;
     width: calc(100vw - (var(--side-margins) * 2));
-    background-color: white;
+    background-color: var(--light-blue);
     position: absolute;
     bottom: -3vh;
     display: flex;
     box-shadow: 0px 5px 28px -8px rgb(85, 83, 83);
     border-radius: 10px;
-    border: 3px solid var(--blue);
+    /*border: 3px solid var(--blue);*/
 }
 .navigation-button {
     background-color: transparent;
     border: none;
     outline: none;
     padding: 0 30px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     cursor: pointer;
     transition: var(--transition);
-    color: black;
+    color: white;
     overflow: hidden;
     font-family: "Poppins", sans-serif;
 }
-
+.navigation-button.right {
+    margin-left: auto;
+    border-radius: 0;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--blue);
+    display: flex;
+}
+.navigation-button.right:hover {
+    background-color: var(--green);
+}
+.navigation .navigation-button:first-child {
+    border-radius: 10px 0 0 10px;
+}
 .navigation-button:hover {
     background-color: var(--blue);
     color: white;
