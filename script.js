@@ -7,7 +7,6 @@ window.toggleMenu = function() {
 }
 let sectionSize = parseInt(getComputedStyle(document.body).getPropertyValue('--header-height'));
 window.scrollToSection = function(section) {
-    console.log((section - 100/(100-sectionSize)))
     window.scrollTo({
         top: (section * 100 - sectionSize) * window.innerHeight / 100,
         behavior: "smooth"
