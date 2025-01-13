@@ -146,14 +146,15 @@ h2 {
     /*margin: 0 10px;*/
 }
 .panel.right .main-title {
-    border-right: 0;
-    border-left: 5px solid var(--blue);
+    /*border-right: 0;*/
+    /*border-left: 5px solid var(--blue);*/
 }
 .main-text {
     font-size: 1.3rem;
     line-height: 2.5rem;
     color: white;
 }
+
 .main-body-image {
     position: absolute;
     height: 100%;
@@ -240,8 +241,11 @@ h2 {
     margin-left: auto;
     margin-right: var(--side-margins);
     justify-self: flex-end;
-    text-align: end;
+    /*text-align: end;*/
 }
+/*.panel.right .main-text {*/
+/*    text-align: left;*/
+/*}*/
 section .panel:first-of-type {
     width: 100vw;
 }
