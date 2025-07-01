@@ -158,9 +158,10 @@ h2 {
 .main-body-image {
     position: absolute;
     height: 100%;
-    clip-path: circle(50% at 45% 50%);
-    right: 15vw;
-    transform: translateX(55%);
+    clip-path: circle(50% at 65% 50%);
+    right: 30vw;
+    transform: translateX(55%) scale(100%);
+
 }
 .main-button {
     margin-top: 30px;
